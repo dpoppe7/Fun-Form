@@ -8,21 +8,42 @@
 </head>
 <body>
     <header class="header">
-         <!-- section: logo?, userprofile, title -->
         <div class="hello-title"></div>
         <div class="qodd"></div>
     </header>
+
+    <!-- modal: first-time setup to get user name. hidden by default -->
+    <div id="nameModal" class="name-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Welcome to Pixel Desk!</h2>
+            <p>What's your name?</p>
+            <p>Your name is used in your dashboard. You can edit this later.</p>
+            <input type="text" id="nameInput" placeholder="">
+            <button id="saveName">Start!</button>
+        </div>
+    </div>
+
     <div class="main-layout">
         <aside class="sidebar-nav">
-             <!-- section: relevant groups -->
-            <div class="icons">
-                <!-- home -->
-                <!-- calendar -->
-
+            <div class="nav-icons">
+                <div class="nav-dashboard"></div>
+                <div class="nav-checklist"></div>
+                <div class="nav-monthly"></div>
+                <div class="nav-projects"></div>
+                <div class="nav-bookshelf"></div>
+            </div>
+            <div class="nav-settings">
+                <div class="nav-settings"></div>
+                <div class="nav-user-img"></div>
             </div>
         </aside>
         <main class="main-content">
-           <!-- section: cards -->
+            <section class="cover-illustration"></section>
+            <section class="container-dashboard active"></section>
+            <section class="container-checklist"></section>
+            <section class="container-monthly"></section>
+            <section class="container-projects"></section>
+            <section class="container-bookshelf"></section>
         </main>
     </div>
     <script src="./js/app.js"></script>
