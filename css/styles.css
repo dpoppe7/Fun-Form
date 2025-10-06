@@ -1,10 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* Mobile first */
 * {
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 16px; 
 }
+
+h1 {
+  font-family: "Jersey 15", sans-serif;
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-family: "Jersey 15", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+}
+
+button {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  font-size: 1.8rem;
+  font-family: "Jersey 15", sans-serif;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+}
+
+button:hover {
+  background-color: rgb(32, 32, 32);
+}
+
+input {
+  font-size: 2rem;
+  font-family: "Jersey 15", sans-serif;
+}
+
+/* modal-section */
+.name-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/images/purple-evening.gif');
+  background-size: cover;
+  height: 100vh;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 2.2rem;
+  gap: 3.5rem;
+  background: rgba(39, 39, 39, 0.1);
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+.modal-content h1 {
+  color: rgb(251, 251, 100);
+}
+
+.name-content{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+}
+.name-content input {
+  background-color: black;
+  padding: 1rem;
+  border-radius: 20px;
+  border: none;
+  color: rgb(251, 251, 100);
+  text-transform: capitalize;
+  cursor: text;
+  text-align: center;
+  caret-color: rgb(251, 251, 100);
+}
+.name-content p {
+  color: lightgray;
+  text-align: center;
+}
+/* tablet */
+@media (min-width: 768px) {
+  p {
+    font-size: 1.125rem; 
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .modal-content {
+      width: 60%;
+      font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 2rem;
+  }
+
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.125rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+
 

@@ -13,12 +13,15 @@
     </header>
 
     <!-- modal: first-time setup to get user name. hidden by default -->
-    <div id="nameModal" class="name-modal" style="display: none;">
+    <div id="nameModal" class="name-modal" >
+        <!-- style="display: none;" -->
         <div class="modal-content">
-            <h2>Welcome to Pixel Desk!</h2>
-            <p>What's your name?</p>
-            <p>Your name is used in your dashboard. You can edit this later.</p>
-            <input type="text" id="nameInput" placeholder="">
+            <h1>Welcome to Pixel Desk!</h1>
+            <div class="name-content">
+                <h2>What's your name?</h2>
+                <input type="text" id="nameInput" placeholder="">
+                <p>Your name will be visible on your dashboard.<br>You can edit this later.</p>
+            </div>
             <button id="saveName">Start!</button>
         </div>
     </div>
