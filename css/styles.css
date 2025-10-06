@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+  --default-bg-img: url('../assets/images/purple-evening.gif');
+
+}
+
+
 /* Mobile first */
 * {
   margin: 0;
@@ -24,7 +30,7 @@ h2 {
 
 p {
   font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 button {
@@ -46,14 +52,45 @@ input {
   font-family: "Jersey 15", sans-serif;
 }
 
+body {
+  height: 100vh;
+  overflow: hidden; 
+  background-color: rgb(36, 36, 36);
+}
+
+header {
+  overflow: hidden;
+  height: 25%;
+  position: relative;
+  background-image: var(--default-bg-img);
+  background-size: cover;
+}
+
+.header-content {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  z-index: 1000;
+  gap: 2rem;
+}
+
+
 /* modal-section */
 .name-modal {
-  display: flex;
+  display: none;
+  position: fixed; 
   justify-content: center;
   align-items: center;
-  background-image: url('../assets/images/purple-evening.gif');
+  background-image: var(--default-bg-img);
   background-size: cover;
   height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+.name-modal.active-modal {
+  display: flex;
 }
 .modal-content {
   display: flex;
@@ -90,12 +127,15 @@ input {
   text-transform: capitalize;
   cursor: text;
   text-align: center;
-  caret-color: rgb(251, 251, 100);
+  caret-color: rgb(219, 219, 152);
 }
 .name-content p {
   color: lightgray;
   text-align: center;
+  font-size: 1rem;
 }
+
+
 /* tablet */
 @media (min-width: 768px) {
   p {
