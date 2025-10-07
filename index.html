@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="./css/styles.css"></link>
 </head>
 <body>
+    <!-- modal: first-time setup to get user name. hidden by default -->
+    <div id="nameModal" class="name-modal">
+        <div class="modal-content">
+            <h1>Welcome to Pixel Desk!</h1>
+            <div class="name-content">
+                <h2>What's your name?</h2>
+                <input type="text" id="nameInput" placeholder="" autofocus>
+                <p>Your name will be visible on your dashboard.<br>You can edit this later.</p>
+            </div>
+            <button id="saveNameBtn">Start!</button>
+        </div>
+    </div>
+
     <header>
         <div class="header-content">
             <div class="hello-title">
@@ -17,19 +30,6 @@
             </div>
         </div>
     </header>
-
-    <!-- modal: first-time setup to get user name. hidden by default -->
-    <div id="nameModal" class="name-modal">
-        <div class="modal-content">
-            <h1>Welcome to Pixel Desk!</h1>
-            <div class="name-content">
-                <h2>What's your name?</h2>
-                <input type="text" id="nameInput" placeholder="">
-                <p>Your name will be visible on your dashboard.<br>You can edit this later.</p>
-            </div>
-            <button id="saveName">Start!</button>
-        </div>
-    </div>
 
     <div class="main-layout">
         <aside class="sidebar-nav">
