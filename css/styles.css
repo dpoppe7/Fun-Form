@@ -68,6 +68,7 @@ header {
   display: flex;
   width: 4rem;
   height: 4rem;
+  font-size: 1.8rem;
   justify-content: center;
   align-items: center;
   background: rgb(39, 39, 39);
@@ -94,8 +95,8 @@ header {
   display: flex;
   position: absolute;
   z-index: 2000;
-  top: 1 rem;
-  left: 1rem;
+  top: 1rem;
+  right: 2rem;
 }
 
 /* modal-section */
