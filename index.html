@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="./css/styles.css"></link>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <h2 id="hello-title"></h2>
+            <p class="qodd">This is a pre-set quote that will change daily.</p>
+        </div>
+        <div class="page-settings">
+            <div class="nav-settings nav-icon">⚙️</div>
+        </div>
+    </header>
+
+    <aside class="nav-container">
+        <div class="nav-icons">
+            <div class="nav-home">⭐</div>
+            <div class="nav-checklist">🍞</div>
+            <div class="nav-monthly">📅</div>
+            <div class="nav-projects">🚗</div>
+            <div class="nav-bookshelf">📚</div>
+        </div>
+        <div class="nav-settings">
+            <div class="nav-settings"></div>
+        </div>
+    </aside>
+
+    <div class="main-layout">
+        <main class="main-content">
+            <section class="container-dashboard active"></section>
+            <section class="container-checklist"></section>
+            <section class="container-monthly"></section>
+            <section class="container-projects"></section>
+            <section class="container-bookshelf"></section>
+        </main>
+    </div>
+
+
     <!-- modal: first-time setup to get user name. hidden by default -->
     <div id="nameModal" class="name-modal">
         <div class="modal-content">
@@ -18,40 +52,6 @@
             </div>
             <button id="saveNameBtn">Start!</button>
         </div>
-    </div>
-
-    <header>
-        <div class="header-content">
-            <div>
-                <h2 id="hello-title"></h2>
-            </div>
-            <div>
-                <p class="qodd">This is a pre-set quote that will change daily.</p>
-            </div>
-        </div>
-    </header>
-
-    <div class="main-layout">
-        <aside class="sidebar-nav">
-            <div class="nav-icons">
-                <div class="nav-dashboard"></div>
-                <div class="nav-checklist"></div>
-                <div class="nav-monthly"></div>
-                <div class="nav-projects"></div>
-                <div class="nav-bookshelf"></div>
-            </div>
-            <div class="nav-settings">
-                <div class="nav-settings"></div>
-                <div class="nav-user-img"></div>
-            </div>
-        </aside>
-        <main class="main-content">
-            <section class="container-dashboard active"></section>
-            <section class="container-checklist"></section>
-            <section class="container-monthly"></section>
-            <section class="container-projects"></section>
-            <section class="container-bookshelf"></section>
-        </main>
     </div>
     <script src="./js/app.js"></script>
 </body>

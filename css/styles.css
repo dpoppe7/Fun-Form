@@ -1,7 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
   --default-bg-img: url('../assets/images/purple-evening.gif');
@@ -62,7 +60,20 @@ header {
   height: 25%;
   position: relative;
   background-image: var(--default-bg-img);
+  background-position: center;
   background-size: cover;
+}
+
+.nav-icon {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  background: rgb(39, 39, 39);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
 .hidden {
@@ -76,7 +87,15 @@ header {
   flex-direction: column;
   padding: 2rem;
   z-index: 1000;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+.page-settings {
+  display: flex;
+  position: absolute;
+  z-index: 2000;
+  top: 1 rem;
+  left: 1rem;
 }
 
 /* modal-section */
@@ -137,6 +156,10 @@ header {
   font-size: 0.9rem;
 }
 
+aside {
+  display: flex;
+  position: fixed;
+}
 
 /* tablet */
 @media (min-width: 768px) {
@@ -145,7 +168,7 @@ header {
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   h1 {
@@ -156,25 +179,32 @@ header {
       width: 60%;
       font-size: 1.2rem;
   }
+  .name-content p {
+    font-size: 1.125rem;
+  }
 
   button {
     font-size: 2rem;
   }
 
+  header {
+    height: 30%;
+  }
+  .header-content {
+    padding: 4rem;
+  }
 }
 
 /* desktop */
 @media (min-width: 1024px) {
-  p {
-    font-size: 1.125rem;
+  header {
+    height: 35%;
   }
-
-  h2 {
-    font-size: 2.4rem;
+  .header-content {
+    padding: 4rem;
   }
-
-  h1 {
-    font-size: 3rem;
+  .page-settings {
+    display: none;
   }
 }
 

@@ -29,7 +29,7 @@ const handleNameSubmission = () => {
     }
     else {
         // give feedback
-        userNameInput.placeholder = "Please insert a name."
+        userNameInput.placeholder = "Please enter a name."
     }
 }
 
