@@ -205,13 +205,16 @@ header {
 }
 
 /* section dashboard: all in one view */
-.container-dashboard {
-  display: block;
+.container-dashboard, 
+.container-checklist, 
+.container-monthly, 
+.container-projects, 
+.container-bookshelf{
+  display: none;
 }
 
-/* view: checklist */
-.container-checklist {
-  display: block;
+.active-view {
+  display: block !important;
 }
 
 /* view: checklist > Todo checklist */

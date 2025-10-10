@@ -1,15 +1,26 @@
-const updateViewNav = (View) => {
-    const navHome = document.getElementById('nav-home');
-    const navCheckin = document.getElementById('nav-check-in');
-    const navMonthly = document.getElementById('nav-monthly');
-    const navProjects = document.getElementById('nav-projects');
-    const navBookshelf = document.getElementById('nav-bookshelf');
 
-    View == 'Home' ? navHome.classList.add('active-nav') : navHome.classList.remove('active-nav');
-    View == 'Checkin' ? navCheckin.classList.add('active-nav') : navCheckin.classList.remove('active-nav');
-    View == 'Monthly' ? navMonthly.classList.add('active-nav') : navMonthly.classList.remove('active-nav');
-    View == 'Projects' ? navProjects.classList.add('active-nav') : navProjects.classList.remove('active-nav');
-    View == 'Bookshelf' ? navBookshelf.classList.add('active-nav') : navBookshelf.classList.remove('active-nav');
+const allNavIcons = document.querySelectorAll('.nav-icon');
+const allViewSections = document.querySelectorAll('.main-content section'); 
+const updateViewNav = (viewName) => {
+    //clear: remove active-nav class from all icons
+    allNavIcons.forEach(icon => {
+        icon.classList.remove('active-nav');
+    })
+
+    // add active-nav ui update class on corresponding clicked nav icon
+    const activeIcon = document.querySelector(`[data-view ="${viewName}"]`);
+    if (activeIcon) {
+        activeIcon.classList.add('active-nav');
+    }
+
+    // update main content view to corresponding view
+    const contentView = document.querySelector(`#view-${viewName}`);
+    allViewSections.forEach(section => {
+        section.classList.remove('active-view');
+    })
+    if (contentView) {
+        contentView.classList.add('active-view');
+    }
 }
 
 const updateInitialUI = () => {
@@ -29,6 +40,7 @@ const updateInitialUI = () => {
         helloTitle.textContent = `Hello, ${savedUsername}!`;
         header.classList.remove('hidden');
         nameModal.classList.remove('active-modal'); 
+        updateViewNav('home'); //defailt view
     }
 }
 
@@ -55,18 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
     startBtn.addEventListener('click', handleNameSubmission);
 
     // Navigation Listeners
-    const navHome = document.querySelector('#nav-home');
-    const navCheckin = document.querySelector('#nav-check-in');
-    const navMonthly = document.querySelector('#nav-monthly');
-    const navProjects = document.querySelector('#nav-projects');
-    const navBookshelf = document.querySelector('#nav-bookshelf');
+    const navIcons = document.querySelector('.nav-icons');
+    navIcons.addEventListener('click', (event) => {
+        const clickedIcon = event.target.closest('.nav-icon');
 
-      navHome.addEventListener('click', () => updateViewNav('Home'));
-    navCheckin.addEventListener('click', () => updateViewNav('Checkin'));
-    navMonthly.addEventListener('click', () => updateViewNav('Monthly'));
-    navProjects.addEventListener('click', () => updateViewNav('Projects'));
-    navBookshelf.addEventListener('click', () => updateViewNav('Bookshelf'));
+        if (clickedIcon) {
+            const viewName = clickedIcon.dataset.view;
 
+            if (viewName) {
+                updateViewNav(viewName);
+            }
+        }
+    })
 })
 
 
