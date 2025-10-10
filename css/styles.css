@@ -3,7 +3,7 @@
 
 :root {
   --default-bg-img: url('../assets/images/purple-evening.gif');
-
+  --accent-color: rgb(251, 251, 100);
 }
 
 /* Mobile first */
@@ -25,7 +25,14 @@ h2 {
   font-weight: 100;
 }
 
-p {
+h3 {
+  font-family: "Fira Code", monospace;
+  font-weight:normal;
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+
+p, label {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
 }
@@ -44,7 +51,7 @@ button:hover {
   background-color: rgb(32, 32, 32);
 }
 
-input {
+input[type="text"] {
   font-size: 2rem;
   font-family: "Jersey 15", sans-serif;
 }
@@ -55,7 +62,7 @@ body {
   background-image: var(--default-bg-img)
 }
 
-.container {
+.nav {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -100,9 +107,9 @@ header {
 
 .nav-icon {
   display: flex;
-  width: 3.6rem;
-  height: 3.6rem;
-  font-size: 1.7rem;
+  width: 3.3rem;
+  height: 3.3rem;
+  font-size: 1.6rem;
   justify-content: center;
   align-items: center;
   background: rgb(39, 38, 47);
@@ -165,7 +172,7 @@ header {
   border-radius: 20px;
 }
 .modal-content h1 {
-  color: rgb(251, 251, 100);
+  color: var(--accent-color);
 }
 
 .name-content{
@@ -180,7 +187,7 @@ header {
   padding: 1rem;
   border-radius: 20px;
   border: none;
-  color: rgb(251, 251, 100);
+  color: var(--accent-color);
   text-transform: capitalize;
   cursor: text;
   text-align: center;
@@ -190,6 +197,57 @@ header {
   color: lightgray;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* main-layout */
+.main-layout {
+  padding: 2rem;
+}
+
+/* section dashboard: all in one view */
+.container-dashboard {
+  display: block;
+}
+
+/* view: checklist */
+.container-checklist {
+  display: block;
+}
+
+/* view: checklist > Todo checklist */
+.todo-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: black;
+  padding: 2rem;
+}
+
+.checklist {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none; /* For Chrome/Safari */
+  appearance: none;  
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.15s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+  border-color: var(--accent-color); 
+  background-color: var(--accent-color);
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* tablet */
