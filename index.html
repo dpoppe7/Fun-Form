@@ -20,7 +20,7 @@
         <aside class="nav-container">
             <div class="nav-icons">
                 <div id="nav-home" class="nav-icon active-nav">⭐</div>
-                <div id="nav-checklist" class="nav-icon">🍞</div>
+                <div id="nav-check-in" class="nav-icon">🍞</div>
                 <div id="nav-monthly" class="nav-icon">📅</div>
                 <div id="nav-projects" class="nav-icon">🚗</div>
                 <div id="nav-bookshelf" class="nav-icon">📚</div>
@@ -36,14 +36,16 @@
                 <section id="view-home" class="container-dashboard">
                     
                 </section>
-                <section id="view-checklist" class="container-checklist">
+                <section id="view-check-in" class="container-checklist">
                     <div class="todo-checklist">
                         <h1>DAILY</h1>
                         <h3 class="todo-title">To do list</h3>
-                        <div class="checklist">
-                            <input type="checkbox" class="checkbox" id="todo-1" name="todo-1">
-                            <label for="todo-1">Content</label>
-                        </div>
+                        <ul class="task-list-container">
+                            <li class="task-item">
+                                <input type="checkbox" class="checkbox" id="todo-1" name="todo-1">
+                                <span id="todoEditable" contenteditable="true">Content</span>
+                            </li>
+                        </ul>
                     </div>
                 </section>
                 <section id="view-monthly" class="container-monthly"></section>
