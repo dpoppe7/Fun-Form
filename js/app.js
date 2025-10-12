@@ -1,72 +1,36 @@
+import { TodoService } from './TodoService.js';
+import * as UI from './appUI.js';
 
-const allNavIcons = document.querySelectorAll('.nav-icon');
-const allViewSections = document.querySelectorAll('.main-content section'); 
-const updateViewNav = (viewName) => {
-    //clear: remove active-nav class from all icons
-    allNavIcons.forEach(icon => {
-        icon.classList.remove('active-nav');
-    })
+// Instantiate the service (this loads the data automatically)
+const todoService = new TodoService();
 
-    // add active-nav ui update class on corresponding clicked nav icon
-    const activeIcon = document.querySelector(`[data-view ="${viewName}"]`);
-    if (activeIcon) {
-        activeIcon.classList.add('active-nav');
-    }
+// function that runs after initial name submission or on load
+const updateAppUI = () => {
+    // Hide/show modal insert initial username
+    UI.updateInitialUI();
 
-    // update main content view to corresponding view
-    const contentView = document.querySelector(`#view-${viewName}`);
-    allViewSections.forEach(section => {
-        section.classList.remove('active-view');
-    })
-    if (contentView) {
-        contentView.classList.add('active-view');
-    }
+    // RENDER DASHBOARD COMPONENTS
+    //UI.renderTodos(todoService.todos);
+
+    //attach handlers
 }
 
-const updateInitialUI = () => {
-    const savedUsername = localStorage.getItem('userName');
-    const nameModal = document.getElementById('nameModal');
-    const header = document.querySelector('header');
-    const helloTitle = document.getElementById('hello-title');
-
-    if (!savedUsername) {
-        // show modal: add .actve-modal containing (display: flex) to display modal content
-        nameModal.classList.add('active-modal'); 
-
-        // hide header and dashboard content
-        header.classList.add('hidden');
-    }
-    else {
-        helloTitle.textContent = `Hello, ${savedUsername}!`;
-        header.classList.remove('hidden');
-        nameModal.classList.remove('active-modal'); 
-        updateViewNav('home'); //defailt view
-    }
-}
-
-const handleNameSubmission = () => {
-    const userNameInput = document.querySelector('#nameInput');
-    const userName = userNameInput.value.trim();
-
-    if (userName) {
-        // save userName to localStorage
-        localStorage.setItem('userName', userName);
-        updateUI();
-    }
-    else {
-        // give feedback
-        userNameInput.placeholder = "Please enter a name."
-    }
+// funtion that handles the initial Start button after a user Name is submitter on Modal view
+const handleStartSubmission = () => {
+    // Callback function (function passed into another function)
+    // UI.handleNameSubmission runs to completion -> then Call refreshUI (which updates the app's UI:hide/show modal and rest of dashboard)
+    UI.handleNameSubmission(updateAppUI);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateInitialUI();
+    // Initial UI setup
+    updateAppUI();
 
     // Start Button Listener (Modal)
     const startBtn = document.querySelector('#saveNameBtn');
-    startBtn.addEventListener('click', handleNameSubmission);
+    startBtn.addEventListener('click', handleStartSubmission);
 
-    // Navigation Listeners
+    // Navigation Listeners (Use delegation)
     const navIcons = document.querySelector('.nav-icons');
     navIcons.addEventListener('click', (event) => {
         const clickedIcon = event.target.closest('.nav-icon');
@@ -75,10 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewName = clickedIcon.dataset.view;
 
             if (viewName) {
-                updateViewNav(viewName);
+                UI.updateViewNav(viewName);
             }
         }
     })
 })
-
-

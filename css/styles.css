@@ -116,6 +116,7 @@ header {
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
   border: 0.7px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+  cursor: pointer;
 }
 .active-nav{
   background: rgb(83, 83, 85);

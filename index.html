@@ -19,7 +19,7 @@
     <div class="nav">
         <aside class="nav-container">
             <div class="nav-icons">
-                <div id="nav-home" class="nav-icon active-nav" data-view="home">⭐</div>
+                <div id="nav-home" class="nav-icon" data-view="home">⭐</div>
                 <div id="nav-check-in" class="nav-icon" data-view="checkin">🍞</div>
                 <div id="nav-monthly" class="nav-icon" data-view="monthly">📅</div>
                 <div id="nav-projects" class="nav-icon" data-view="projects">🚗</div>
@@ -39,11 +39,11 @@
                 <section id="view-checkin" class="container-checklist">
                     <div class="todo-checklist">
                         <h1>DAILY</h1>
-                        <h3 class="todo-title">To do list</h3>
+                        <h3>To do list</h3>
                         <ul class="task-list-container">
-                            <li class="task-item">
+                            <li class="task-item" data-id="1">
                                 <input type="checkbox" class="checkbox" id="todo-1" name="todo-1">
-                                <span id="todoEditable" contenteditable="true">Content</span>
+                                <span class="todo-editable" contenteditable="true"></span>
                             </li>
                         </ul>
                     </div>
@@ -67,6 +67,6 @@
             <button id="saveNameBtn">Start!</button>
         </div>
     </div>
-    <script src="./js/app.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>
