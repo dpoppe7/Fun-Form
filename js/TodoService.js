@@ -39,9 +39,9 @@ export class TodoService {
 
         //
         if (parentId != null) {
-            const flag = this.#todos.findIndex(t => t.id === parentId);
+            const index = this.#todos.findIndex(t => t.id === parentId);
             
-            if (flag == -1) { // index not found: findIndex return -1
+            if (index == -1) { // index not found: findIndex return -1
                 this.#todos.push(newTodo);
             }
             else {
@@ -54,6 +54,7 @@ export class TodoService {
         this.#save();
         return newTodo;
     }
+
     //#updateText - updates content of a todo item
     updateText(newText, id) {
         const obj = this.#todos.find(t => t.id === id);
@@ -65,6 +66,27 @@ export class TodoService {
         return false;
     }
 
-    //#toggleCheck
+    //#toggleCheck 
+    toggleCompleted(id){
+        const obj = this.#todos.find(t => t.id === id);
+        if (obj) {
+            obj.completed = !obj.completed;
+            this.#save();
+            return true;
+        }
+        return false;
+    }
+
     //#delete
+    delete(id){
+        const arrayCurrLength = this.#todos.length;
+        const arrayCopy = this.todos.filter(t => t.id !== id);
+
+        if (arrayCopy.length < arrayCurrLength) {
+            this.#todos = arrayCopy
+            this.#save();
+            return true;
+        }
+        return false;
+    }
 }
