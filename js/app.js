@@ -4,6 +4,10 @@ import * as UI from './appUI.js';
 // Instantiate the service (this loads the data automatically)
 const todoService = new TodoService();
 
+// TESTING:
+// making todoService accessible via the console.
+window.todoService = todoService; 
+
 // function that runs after initial name submission or on load
 const updateAppUI = () => {
     // Hide/show modal insert initial username
